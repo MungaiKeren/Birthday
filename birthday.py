@@ -18,5 +18,5 @@ birthdate = date(year=converted_year, month=c_month, day=c_date)
 
 print("Birthdate: ", birthdate) # date function 'combines' the dates
 age = birthdate - date.today()
-print(age)
+print(age/365)
 
