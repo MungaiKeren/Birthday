@@ -11,10 +11,12 @@ converted_year = int(birthyear) # int function converts string input to integer
 birthmonth = input("Month?")
 c_month = int(birthmonth)
 
-birthdate = input("Day?")
-c_date = int(birthdate)
+birthday = input("Day?")
+c_date = int(birthday)
 
-print("Birthdate: ", date(year=converted_year, month=c_month, day=c_date)) # date function 'combines' the dates
+birthdate = date(year=converted_year, month=c_month, day=c_date)
 
-
+print("Birthdate: ", birthdate) # date function 'combines' the dates
+age = birthdate - date.today()
+print(age)
 
