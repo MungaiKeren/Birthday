@@ -1,5 +1,5 @@
 # import the three main classes from datetime
-from datetime import date, time, datetime
+from datetime import date, time, datetime, timedelta
 
 fname = input("Type in your first name: ")
 lname = input("Your last name: ")
@@ -17,6 +17,8 @@ c_date = int(birthday)
 birthdate = date(year=converted_year, month=c_month, day=c_date)
 
 print("Birthdate: ", birthdate) # date function 'combines' the dates
-age = birthdate - date.today()
-print(age/365)
+today = date.today()
+age = birthdate - today()
+print(age) # prints age in days
+print(int(age.days)//365, abs(12 - (birthdate.month - today.month)), abs(today.day))
 
