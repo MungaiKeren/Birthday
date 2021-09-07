@@ -5,6 +5,8 @@ fname = input("Type in your first name: ")
 lname = input("Your last name: ")
 print("Hello "+fname+" "+lname)
 
+# take the input year and validate the input
+
 while True:
     try:
         birthyear = input("What year were you born?")
@@ -23,31 +25,33 @@ while True:
         # input successfully parsed
         break
 
+# prompt for the month year and validate the month 
+
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 while True:
     try:
-        birthmonth = input(" What Month?")
+        birthmonth = input("What Month?")
     except ValueError:
         print("Sorry I didn't understand that")
         continue
     if birthmonth == " ":
         print("Please enter a month in the calendar")
-        continue
-    elif birthmonth != "Jan" or birthmonth != "Feb" or birthmonth != "Mar" or birthmonth != "Apr" or birthmonth != "May":
-        print("Please type in a valid month eg Feb")
-        continue
+        break
+    elif birthmonth not in months:
+        print("Please enter a valid month eg Feb")
     else:
-        # input successfully parsed
+        # Input susscessfully parsed
         break
         
 
 # convert the string dates to integers
 int_year = int(birthyear)
-int_month = int(birthmonth)
+# int_month = int(birthmonth)
 
 birthday = input("Day?")
 c_date = int(birthday)
 
-birthdate = date(year=int_year, month=int_month, day=c_date)
+# birthdate = date(year=int_year, month=int_month, day=c_date)
 
 print("Birthdate: ", birthdate) # date function 'combines' the dates
 today = date.today()
