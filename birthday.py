@@ -8,11 +8,20 @@ print("Hello "+fname+" "+lname)
 while True:
     try:
         birthyear = input("What year were you born?")
-        if not len(birthyear) == 4:
-            print("Please give us a valid date, eg 1999 ")
-        continue
+
     except ValueError:
         # age successfully parsed
+        print("Sorry I didn't understand that")
+        continue
+    
+    if birthyear == " ":
+        print("Please enter a date")
+        continue
+    elif len(birthyear) != 4:
+        print("Please give a valid birth year")
+        continue
+    else:
+        # input successfully parsed
         break
 
 
