@@ -10,30 +10,44 @@ while True:
         birthyear = input("What year were you born?")
 
     except ValueError:
-        # age successfully parsed
         print("Sorry I didn't understand that")
         continue
     
     if birthyear == " ":
-        print("Please enter a date")
+        print("Please enter an year")
         continue
     elif len(birthyear) != 4:
-        print("Please give a valid birth year")
+        print("Please give a valid birth year eg 1999")
         continue
     else:
         # input successfully parsed
         break
 
+while True:
+    try:
+        birthmonth = input(" What Month?")
+    except ValueError:
+        print("Sorry I didn't understand that")
+        continue
+    if birthmonth == " ":
+        print("Please enter a month in the calendar")
+        continue
+    elif birthmonth != "Jan" or birthmonth != "Feb" or birthmonth != "Mar" or birthmonth != "Apr" or birthmonth != "May":
+        print("Please type in a valid month eg Feb")
+        continue
+    else:
+        # input successfully parsed
+        break
+        
+
 # convert the string dates to integers
 int_year = int(birthyear)
-
-birthmonth = input("Month?")
-c_month = int(birthmonth)
+int_month = int(birthmonth)
 
 birthday = input("Day?")
 c_date = int(birthday)
 
-birthdate = date(year=int_year, month=c_month, day=c_date)
+birthdate = date(year=int_year, month=int_month, day=c_date)
 
 print("Birthdate: ", birthdate) # date function 'combines' the dates
 today = date.today()
