@@ -24,6 +24,8 @@ while True:
         # input successfully parsed
         break
 
+# convert the string dates to integers
+int_year = int(birthyear)
 
 birthmonth = input("Month?")
 c_month = int(birthmonth)
