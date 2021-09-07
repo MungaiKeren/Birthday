@@ -5,8 +5,10 @@ fname = input("Type in your first name: ")
 lname = input("Your last name: ")
 print("Hello "+fname+" "+lname)
 
-birthyear = input("What year were you born?")
-converted_year = int(birthyear) # int function converts string input to integer
+birthyear = int(input("What year were you born?"))
+
+if len(birthyear) < 4:
+    print("Please enter a valid year")
 
 birthmonth = input("Month?")
 c_month = int(birthmonth)
@@ -14,11 +16,11 @@ c_month = int(birthmonth)
 birthday = input("Day?")
 c_date = int(birthday)
 
-birthdate = date(year=converted_year, month=c_month, day=c_date)
+birthdate = date(year=birthyear, month=c_month, day=c_date)
 
 print("Birthdate: ", birthdate) # date function 'combines' the dates
 today = date.today()
 age = birthdate - today
-print(age) # prints age in days
+
 print(int(age.days)//365, abs(12 - (birthdate.month - today.month)), abs(today.day))
 
