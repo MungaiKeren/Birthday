@@ -46,6 +46,10 @@ while True:
 
 # convert the string dates to integers
 int_year = int(birthyear)
+
+int_month = months.index(birthmonth) + 1
+
+
 # int_month = int(birthmonth)
 
 birthday = input("Day?")
