@@ -42,24 +42,29 @@ while True:
     else:
         # Input susscessfully parsed
         break
-        
+
 
 # convert the string dates to integers
 int_year = int(birthyear)
-
 int_month = months.index(birthmonth) + 1
 
-
-# int_month = int(birthmonth)
-
+# prompt for month date and validate the input
 birthday = input("Day?")
-c_date = int(birthday)
+
+if birthday == " ":
+    print("Give a date")
+elif int(birthday) > 31:
+    print("Please Give a valid date")
+else:
+    print(birthday)
+
+
 
 # birthdate = date(year=int_year, month=int_month, day=c_date)
 
-print("Birthdate: ", birthdate) # date function 'combines' the dates
-today = date.today()
-age = birthdate - today
+# print("Birthdate: ", birthdate) # date function 'combines' the dates
+# today = date.today()
+# age = birthdate - today
 
-print(int(age.days)//365, abs(12 - (birthdate.month - today.month)), abs(today.day))
+# print(int(age.days)//365, abs(12 - (birthdate.month - today.month)), abs(today.day))
 
