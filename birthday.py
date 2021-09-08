@@ -113,7 +113,6 @@ from dateutil import relativedelta
 
 usersDate = date(year=int_year, month=int_month, day=int_birthday)
 this_day = datetime.today()
-print("And today is: ",this_day)
 
 if usersDate.month == this_day.month:
     if usersDate.day == this_day.day:
@@ -124,4 +123,3 @@ else:
     age = relativedelta.relativedelta(this_day, usersDate)
 
     print("You are {0.years} years, {0.months} months and {0.days} days old".format(age))
-
