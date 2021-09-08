@@ -55,8 +55,29 @@ if birthday == " ":
     print("Give a date")
 elif int(birthday) > 31:
     print("Please Give a valid date")
+
+# check if year is leap
+elif int(birthyear) % 4 == 0:
+    if int(birthyear) % 100 == 0:
+        if int(birthyear) % 400 == 0:
+            # for the month feb, number of days cannot exceed 29
+            if birthmonth == "Feb":
+                #this year is leap
+                int(birthday) <= 29
+            else:
+                # this is not a leap year
+                int(birthday) <=28
+        else:
+            # this year is not leap
+            int(birthday) <= 28
+    else:
+        # the year is leap
+        int(birthday) <= 29
 else:
-    print(birthday)
+    # the year is leap
+    int(birthday) <= 29
+    
+
 
 
 
