@@ -44,25 +44,25 @@ while True:
         break
 
 
-def leap_year(year):
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                # this is a leap year
-                if birthmonth == "Feb":
-                    birthday = range(0,30)
-            else:
-                # this is not a leap year
-                if birthmonth == "Feb":
-                    birthday = range(0,29)
-        else:
-            # leap year
-            if birthmonth == "Feb":
-                birthday = range(0,30)
-    else:
-        # not a leap year
-        if birthmonth == "Feb":
-            birthday = range(0,29)
+# def leap_year(year):
+#     if year % 4 == 0:
+#         if year % 100 == 0:
+#             if year % 400 == 0:
+#                 # this is a leap year
+#                 if birthmonth == "Feb":
+#                     birthday = range(0,30)
+#             else:
+#                 # this is not a leap year
+#                 if birthmonth == "Feb":
+#                     birthday = range(0,29)
+#         else:
+#             # leap year
+#             if birthmonth == "Feb":
+#                 birthday = range(0,30)
+#     else:
+#         # not a leap year
+#         if birthmonth == "Feb":
+#             birthday = range(0,29)
 
 
 # prompt for month date and validate the input
@@ -98,39 +98,17 @@ def date_validation(day, month, year):
     except ValueError:
         isValidDate = False
     
-    if isValidDate:
-        print("Valid date")
+    if isValidDate == False:
+        print("Invalid date! Try again")
+        birthyear = input("What year were you born?")
+        birthmonth = input("What Month?")
+        birthday = input("Day?")
     
     else:
-        print("Invalid date")
+        print("Valid date")
 
 
 date_validation(int_birthday, int_month, int_year)
-
-
-# # check if year is leap
-# elif int(birthyear) % 4 == 0:
-#     if int(birthyear) % 100 == 0:
-#         if int(birthyear) % 400 == 0:
-#             # for the month feb, number of days cannot exceed 29
-#             if birthmonth == "Feb":
-#                 #this year is leap
-#                 int(birthday) <= 29
-#             else:
-#                 # this is not a leap year
-#                 int(birthday) <=28
-#         else:
-#             # this year is not leap
-#             int(birthday) <= 28
-#     else:
-#         # the year is leap
-#         int(birthday) <= 29
-# else:
-#     # the year is leap
-#     int(birthday) <= 29
-    
-
-
 
 
 # birthdate = date(year=int_year, month=int_month, day=c_date)
