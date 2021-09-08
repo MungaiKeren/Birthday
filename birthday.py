@@ -34,9 +34,9 @@ while True:
     except ValueError:
         print("Sorry I didn't understand that")
         continue
-    if birthmonth == " ":
+    if not birthmonth:
         print("Please enter a month in the calendar")
-        break
+        continue
     elif birthmonth not in months:
         print("Please enter a valid month eg Feb")
     else:
