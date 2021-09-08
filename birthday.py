@@ -15,7 +15,7 @@ while True:
         print("Sorry I didn't understand that")
         continue
     
-    if birthyear == " ":
+    if not birthyear:
         print("Please enter an year")
         continue
     elif len(birthyear) != 4:
@@ -49,33 +49,46 @@ int_year = int(birthyear)
 int_month = months.index(birthmonth) + 1
 
 # prompt for month date and validate the input
-birthday = input("Day?")
-
-if birthday == " ":
-    print("Give a date")
-elif int(birthday) > 31:
-    print("Please Give a valid date")
-
-# check if year is leap
-elif int(birthyear) % 4 == 0:
-    if int(birthyear) % 100 == 0:
-        if int(birthyear) % 400 == 0:
-            # for the month feb, number of days cannot exceed 29
-            if birthmonth == "Feb":
-                #this year is leap
-                int(birthday) <= 29
-            else:
-                # this is not a leap year
-                int(birthday) <=28
-        else:
-            # this year is not leap
-            int(birthday) <= 28
+while True:
+    try:
+        birthday = input("Day?")
+    except ValueError:
+        print("Sorry I do not understand that")
+        continue
+    if birthday == " ":
+        print("Please enter a date of the month")
+        continue
+    elif int(birthday) > 31:
+        print("Ensure to enter a valid date eg 29")
     else:
-        # the year is leap
-        int(birthday) <= 29
-else:
-    # the year is leap
-    int(birthday) <= 29
+        break
+
+
+# if birthday == " ":
+#     print("Give a date")
+# elif int(birthday) > 31:
+#     print("Please Give a valid date")
+
+# # check if year is leap
+# elif int(birthyear) % 4 == 0:
+#     if int(birthyear) % 100 == 0:
+#         if int(birthyear) % 400 == 0:
+#             # for the month feb, number of days cannot exceed 29
+#             if birthmonth == "Feb":
+#                 #this year is leap
+#                 int(birthday) <= 29
+#             else:
+#                 # this is not a leap year
+#                 int(birthday) <=28
+#         else:
+#             # this year is not leap
+#             int(birthday) <= 28
+#     else:
+#         # the year is leap
+#         int(birthday) <= 29
+# else:
+#     # the year is leap
+#     int(birthday) <= 29
     
 
 
