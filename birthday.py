@@ -48,6 +48,19 @@ while True:
 int_year = int(birthyear)
 int_month = months.index(birthmonth) + 1
 
+def leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                # this is a leap year
+            else:
+                # this is not a leap year
+        else:
+            # leap year
+    else:
+        # not a leap year
+
+
 # prompt for month date and validate the input
 while True:
     try:
@@ -55,19 +68,18 @@ while True:
     except ValueError:
         print("Sorry I do not understand that")
         continue
-    if birthday == " ":
+    if not birthday:
         print("Please enter a date of the month")
         continue
     elif int(birthday) > 31:
         print("Ensure to enter a valid date eg 29")
+        continue
+    elif int(birthday) <= 0:
+        print("Ensure to enter a valid date eg 29")
+        continue
     else:
         break
 
-
-# if birthday == " ":
-#     print("Give a date")
-# elif int(birthday) > 31:
-#     print("Please Give a valid date")
 
 # # check if year is leap
 # elif int(birthyear) % 4 == 0:
