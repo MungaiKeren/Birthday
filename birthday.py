@@ -44,12 +44,25 @@ while True:
         break
 
 
-# convert the string dates to integers
-int_year = int(birthyear)
-int_month = months.index(birthmonth) + 1
-
-# def leap_year(year):
-    
+def leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                # this is a leap year
+                if birthmonth == "Feb":
+                    birthday = range(0,30)
+            else:
+                # this is not a leap year
+                if birthmonth == "Feb":
+                    birthday = range(0,29)
+        else:
+            # leap year
+            if birthmonth == "Feb":
+                birthday = range(0,30)
+    else:
+        # not a leap year
+        if birthmonth == "Feb":
+            birthday = range(0,29)
 
 
 # prompt for month date and validate the input
@@ -59,51 +72,40 @@ while True:
     except ValueError:
         print("Sorry I do not understand that")
         continue
-    if int_year % 4 == 0:
-        if int_year % 100 == 0:
-            if int_year % 400 == 0:
-                # this is a leap year
-                if birthmonth == "Feb":
-                    int(birthday) <= 29
-            else:
-                # this is not a leap year
-                if birthmonth == "Feb":
-                    int(birthday) <= 28
-        else:
-            # leap year
-            if birthmonth == "Feb":
-                int(birthday) <= 29        
+    if not birthday:
+        print("Please enter a date of the month")
         continue
-    elif not birthday:
-        print("Please give me a date")
+    elif int(birthday) > 31:
+        print("Ensure to enter a valid date eg 29")
         continue
-    elif birthday > 31:
-        print("Please enter a valid date")
+    elif int(birthday) <= 0:
+        print("Ensure to enter a valid date eg 29")
         continue
     else:
-        # not a leap year
-        if birthmonth == "Feb":
-            int(birthday) <= 28
         break
+# convert the string dates to integers
+int_year = int(birthyear)
+int_month = months.index(birthmonth) + 1
+int_birthday = int(birthday)
+
+# validate date
+import datetime
+def date_validation(day, month, year):
+    isValidDate = True
+
+    try:
+        datetime.datetime(int(year), int(month), int(day))
+    except ValueError:
+        isValidDate = False
+    
+    if isValidDate:
+        print("Valid date")
+    
+    else:
+        print("Invalid date")
 
 
-
-
-
-
-    # if not birthday:
-    #     print("Please enter a date of the month")
-    #     continue
-    # elif int(birthday) > 31:
-    #     print("Ensure to enter a valid date eg 29")
-    #     continue
-    # elif int(birthday) <= 0:
-    #     print("Ensure to enter a valid date eg 29")
-    #     continue
-    # elif leap_year(int_year):
-    #     continue
-    # else:
-    #     break
+date_validation(int_birthday, int_month, int_year)
 
 
 # # check if year is leap
