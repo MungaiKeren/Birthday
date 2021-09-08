@@ -112,23 +112,11 @@ from datetime import datetime
 from dateutil import relativedelta
 
 usersDate = date(year=int_year, month=int_month, day=int_birthday)
-this_day = datetime.today().strftime('%Y-%m-%d')
+this_day = datetime.today()
 print("And today is: ",this_day)
 
-if usersDate == this_day:
-    print("Huraay, today is your birthday")
-else:
-    # subract the dates
-    dateDiff = relativedelta.relativedelta(this_day, usersDate)
-    years = dateDiff.years
-    months = dateDiff.months
-    days = dateDiff.days
-
-    print("Your birthday is in {} years {} months {} days".format(years, months, days))
-
-# print("Birthdate: ", birthdate) # date function 'combines' the dates
-# today = date.today()
-# age = birthdate - today
-
-# print(int(age.days)//365, abs(12 - (birthdate.month - today.month)), abs(today.day))
+if usersDate.month == this_day.month:
+    if usersDate.day == this_day.day:
+        age = relativedelta.relativedelta(this_day, usersDate)
+        print("Hurray, today is your birthday! You are now {0.years} years old".format(age))
 
