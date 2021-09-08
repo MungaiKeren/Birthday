@@ -100,9 +100,6 @@ def date_validation(day, month, year):
     
     if isValidDate == False:
         print("Invalid date! Try again")
-        birthyear = input("What year were you born?")
-        birthmonth = input("What Month?")
-        birthday = input("Day?")
     
     else:
         print("Valid date")
