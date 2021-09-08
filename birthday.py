@@ -102,13 +102,29 @@ def date_validation(day, month, year):
         print("Invalid date! Try again")
     
     else:
-        print("Valid date")
+        usersDate = date(year=int_year, month=int_month, day=int_birthday)
+        print("You were born on: ", usersDate)
 
 
 date_validation(int_birthday, int_month, int_year)
 
+from datetime import datetime
+from dateutil import relativedelta
 
-# birthdate = date(year=int_year, month=int_month, day=c_date)
+usersDate = date(year=int_year, month=int_month, day=int_birthday)
+this_day = datetime.today().strftime('%Y-%m-%d')
+print("And today is: ",this_day)
+
+if usersDate == this_day:
+    print("Huraay, today is your birthday")
+else:
+    # subract the dates
+    dateDiff = relativedelta.relativedelta(this_day, usersDate)
+    years = dateDiff.years
+    months = dateDiff.months
+    days = dateDiff.days
+
+    print("Your birthday is in {} years {} months {} days".format(years, months, days))
 
 # print("Birthdate: ", birthdate) # date function 'combines' the dates
 # today = date.today()
