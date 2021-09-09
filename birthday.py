@@ -119,16 +119,16 @@ if usersDate.month == this_day.month:
         age = relativedelta.relativedelta(this_day, usersDate)
         print("Hurray, today is your birthday! You are now {0.years} years old".format(age))
 
-else:
-    age = relativedelta.relativedelta(this_day, usersDate)
 
-    print("You are {0.years} years, {0.months} months and {0.days} days old".format(age))
+age = relativedelta.relativedelta(this_day, usersDate)
+
+print("You are {0.years} years, {0.months} months and {0.days} days old".format(age))
 
 # next birthday
-def next_birthday(user_date ,thisDay):
-    delta1 = datetime(user_date.year ,user_date.month, user_date.day)
-    delta2 = datetime(thisDay.year + 1, thisDay.month, thisDay.day)
+# def next_birthday(user_date ,thisDay):
+#     delta1 = datetime(user_date.year ,user_date.month, user_date.day)
+#     delta2 = datetime(thisDay.year + 1, thisDay.month, thisDay.day)
 
-    print((delta1 if delta1 > thisDay else delta2) - thisDay).days
+#     print((delta1 if delta1 > thisDay else delta2) - thisDay).days
 
-next_birthday(usersDate, this_day)
+# next_birthday(usersDate, this_day)
