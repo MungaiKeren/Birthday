@@ -125,10 +125,18 @@ age = relativedelta.relativedelta(this_day, usersDate)
 print("You are {0.years} years, {0.months} months and {0.days} days old".format(age))
 
 # next birthday
-# def next_birthday(user_date ,thisDay):
-#     delta1 = datetime(user_date.year ,user_date.month, user_date.day)
-#     delta2 = datetime(thisDay.year + 1, thisDay.month, thisDay.day)
 
-#     print((delta1 if delta1 > thisDay else delta2) - thisDay).days
+next_year = this_day.year + 1
+print(next_year) 
 
-# next_birthday(usersDate, this_day)
+
+def calculate_dates(original_date, now):
+    delta1 = datetime(now.year, original_date.month, original_date.day)
+    delta2 = datetime(now.year+1, original_date.month, original_date.day)
+    
+    return ((delta1 if delta1 > now else delta2) - now).days
+
+now = datetime.now()
+c = calculate_dates(usersDate, now)
+
+print("Your next birthday is in ", c, " days.")
