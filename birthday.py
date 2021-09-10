@@ -43,28 +43,6 @@ while True:
         # Input susscessfully parsed
         break
 
-
-# def leap_year(year):
-#     if year % 4 == 0:
-#         if year % 100 == 0:
-#             if year % 400 == 0:
-#                 # this is a leap year
-#                 if birthmonth == "Feb":
-#                     birthday = range(0,30)
-#             else:
-#                 # this is not a leap year
-#                 if birthmonth == "Feb":
-#                     birthday = range(0,29)
-#         else:
-#             # leap year
-#             if birthmonth == "Feb":
-#                 birthday = range(0,30)
-#     else:
-#         # not a leap year
-#         if birthmonth == "Feb":
-#             birthday = range(0,29)
-
-
 # prompt for month date and validate the input
 while True:
     try:
@@ -125,10 +103,6 @@ age = relativedelta.relativedelta(this_day, usersDate)
 print("You are {0.years} years, {0.months} months and {0.days} days old".format(age))
 
 # next birthday
-
-next_year = this_day.year + 1
-print(next_year) 
-
 
 def calculate_dates(original_date, now):
     delta1 = datetime(now.year, original_date.month, original_date.day)
